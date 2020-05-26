@@ -22,6 +22,7 @@ const SignUp = (props) => {
     setDisabled("disabled");
     try {
       await createMe(data);
+      // Todo: Can't perform a React state update on an unmounted component
       history.push(paths.signup.thanks);
     } catch (err) {
       console.log(err);
