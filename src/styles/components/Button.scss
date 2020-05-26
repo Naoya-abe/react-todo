@@ -1,0 +1,24 @@
+@import "../values";
+
+// 共通
+
+// // web
+@media screen and (min-width: 1280px) {
+  .ui.button {
+    width: 100%;
+    height: $web__form-height;
+    border-radius: $web__form-border-radius;
+    font-size: $web__font-size-m;
+    background-color: $app__accent-color;
+    color: $app__white-color;
+    padding: 0 36px;
+  }
+}
+
+// // tablet
+// @media screen and (min-width: 768px) and (max-width: 1279px) {
+// }
+
+// // mobile
+// @media screen and (max-width: 767px) {
+// }

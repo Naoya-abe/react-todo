@@ -1,0 +1,37 @@
+@import "../values";
+
+// 共通
+
+// web
+@media screen and (min-width: 1280px) {
+  .header {
+    margin-top: 50px;
+    .ui.secondary.menu {
+      .item {
+        padding: 0;
+        margin: 0 100px 0 0;
+        a {
+          color: $app__white-color;
+          font-size: $web__font-size-l;
+        }
+      }
+      .right.menu {
+        .item {
+          margin-right: 0;
+
+          .to-signup {
+            margin-right: 80px;
+          }
+        }
+      }
+    }
+  }
+}
+
+// tablet
+@media screen and (min-width: 768px) and (max-width: 1279px) {
+}
+
+// mobile
+@media screen and (max-width: 767px) {
+}

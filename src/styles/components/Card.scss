@@ -1,0 +1,60 @@
+@import "../values";
+
+// 共通
+
+// // web
+@media screen and (min-width: 1280px) {
+  .ui.cards {
+    .card {
+      width: 500px;
+      .content {
+        padding: 16px;
+        .header {
+          display: flex;
+          align-items: center;
+          margin-bottom: 8px;
+          .mini.ui.image {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin-right: 8px;
+          }
+          &:not(.ui) {
+            font-size: $web__font-size-m;
+          }
+        }
+        .meta {
+          font-size: $web__font-size-s;
+        }
+        .description {
+          font-size: $web__font-size-s;
+        }
+        .update-buttons {
+          display: flex;
+          justify-content: space-around;
+          margin-top: 32px;
+
+          .ui.button {
+            width: 200px;
+          }
+
+          .to-edit {
+          }
+          .to-delete {
+            .ui.button {
+              background-color: $app__negative-color;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// // tablet
+// @media screen and (min-width: 768px) and (max-width: 1279px) {
+// }
+
+// // mobile
+// @media screen and (max-width: 767px) {
+// }

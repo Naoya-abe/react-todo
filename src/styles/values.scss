@@ -1,0 +1,71 @@
+// color
+$app__main-color: #33485d;
+$app__accent-color: #25d8ce;
+$app__white-color: #ffffff;
+$app__text-color: #262626;
+$app__negative-color: #ea4c89;
+$app__gray-color: #dbdbdb;
+
+// Web 画面サイズ：1280〜
+// font-size
+$web__font-size-xs: 16px;
+$web__font-size-s: 18px;
+$web__font-size-m: 24px;
+$web__font-size-l: 30px;
+$web__title: 100px;
+
+// marign
+$web__main-upDown: 64px;
+$web__main-upDown-L: 128px;
+$web__main-side: 24px;
+
+// form
+$web__form-height: 54px;
+$web__form-border-radius: 27px;
+$web__form-margin-bottom: 38px;
+
+// tablet　画面サイズ：768〜1279
+// font-size
+$tablet__font-size-xs: 12px;
+$tablet__font-size-s: 16px;
+$tablet__font-size-m: 20px;
+$tablet__font-size-l: 24px;
+$tablet__title: 28px;
+
+//marign
+$tablet__main-upDown: 56px;
+$tablet__main-upDown-L: 112px;
+$tablet__main-side: 24px;
+
+// mobile　画面サイズ：320〜767
+// font-size
+$mobile__font-size-s: 14px;
+$mobile__font-size-m: 16px;
+$mobile__font-size-l: 20px;
+$mobile__title: 24px;
+
+//marign
+$mobile__main-upDown: 40px;
+$mobile__main-upDown-L: 80px;
+$mobile__main-side: 16px;
+
+// height
+$mobile__header-height: 65px;
+$mobile__header-button-height: 32px;
+$mobile__footer-height: 120px;
+$mobile__button-height: 60px;
+$mobile__form-height: 40px;
+
+// // 共通
+
+// // web
+// @media screen and (min-width: 1280px) {
+// }
+
+// // tablet
+// @media screen and (min-width: 768px) and (max-width: 1279px) {
+// }
+
+// // mobile
+// @media screen and (max-width: 767px) {
+// }
