@@ -1,6 +1,14 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import { Router } from "react-router-dom";
 
-import TodoList from "./pages/todos/TodoList";
+import history from "./history";
 
-ReactDOM.render(<TodoList />, document.querySelector("#root"));
+import Routes from "./routes";
+
+ReactDOM.render(
+  <Router history={history}>
+    <Routes />
+  </Router>,
+  document.querySelector("#root")
+);
