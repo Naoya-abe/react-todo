@@ -1,17 +1,33 @@
 import React, { useState } from "react";
+
+import { connect } from "react-redux";
 import { useForm } from "react-hook-form";
 
-import { Button, Form } from "../../components";
+import { createMe } from "../../redux/actions/me";
 
+import history from "../../history";
+import paths from "../../config/paths";
+
+import { Button, Form } from "../../components";
 import "../../styles/pages/SignUp/index.scss";
 
 const SignUp = (props) => {
+  const { createMe } = props;
   const { register, handleSubmit, errors } = useForm();
   const [loading, setLoading] = useState("");
   const [disabled, setDisabled] = useState("");
 
   const handleSignUp = async (data) => {
-    console.log(data);
+    setLoading("loading");
+    setDisabled("disabled");
+    try {
+      await createMe(data);
+      history.push(paths.signup.thanks);
+    } catch (err) {
+      console.log(err);
+    }
+    setLoading("");
+    setDisabled("");
   };
 
   return (
@@ -75,4 +91,4 @@ const SignUp = (props) => {
   );
 };
 
-export default SignUp;
+export default connect(null, { createMe })(SignUp);

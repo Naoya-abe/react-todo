@@ -18,7 +18,7 @@ const TodoRoutes = () => {
     <React.Fragment>
       <Switch>
         {/* {window.isAuthed ? ( */}
-        {1 ? (
+        {0 ? (
           <React.Fragment>
             <Route exact path={paths.todos.create} component={TodoCreate} />
             <Route exact path={paths.todos.delete} component={TodoDelete} />
