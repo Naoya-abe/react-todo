@@ -1,0 +1,33 @@
+@import "../../values";
+
+// 共通
+
+// web
+@media screen and (min-width: 1280px) {
+  .todo-create {
+    display: flex;
+    height: 80vh;
+
+    .title {
+      width: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: $web__title;
+    }
+    .create-form {
+      width: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+}
+
+// tablet
+@media screen and (min-width: 768px) and (max-width: 1279px) {
+}
+
+// mobile
+@media screen and (max-width: 767px) {
+}
