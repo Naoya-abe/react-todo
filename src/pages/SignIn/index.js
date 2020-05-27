@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 
+import { fetchMeTokenAPI } from "../../api/me";
 import { Button, Form } from "../../components";
 
 import "../../styles/pages/SignIn/index.scss";
@@ -11,7 +12,17 @@ const SignIn = () => {
   const [disabled, setDisabled] = useState("");
 
   const handleSignIn = async (data) => {
-    console.log(data);
+    setLoading("loading");
+    setDisabled("disabled");
+    try {
+      const response = await fetchMeTokenAPI(data);
+      sessionStorage.setItem("token", response.token);
+      window.location.href = "/todos";
+    } catch (err) {
+      console.log(err);
+      setLoading("");
+      setDisabled("");
+    }
   };
 
   return (

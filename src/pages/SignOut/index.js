@@ -9,8 +9,10 @@ import "../../styles/pages/SignOut/index.scss";
 const SignOut = () => {
   const [loading, setLoading] = useState(false);
 
-  const handleSignOut = async () => {
-    console.log("handleSignOut");
+  const handleSignOut = () => {
+    setLoading("loading");
+    sessionStorage.clear();
+    window.location.href = "/todos";
   };
 
   const handleCancel = () => {

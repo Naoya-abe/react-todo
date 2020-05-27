@@ -12,13 +12,10 @@ import {
 } from "../../pages/todos";
 
 const TodoRoutes = () => {
-  console.log(window.isAuthed);
-
   return (
     <React.Fragment>
       <Switch>
-        {/* {window.isAuthed ? ( */}
-        {0 ? (
+        {window.isAuthed ? (
           <React.Fragment>
             <Route exact path={paths.todos.create} component={TodoCreate} />
             <Route exact path={paths.todos.delete} component={TodoDelete} />

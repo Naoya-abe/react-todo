@@ -16,3 +16,17 @@ export const createMeAPI = async (data) => {
     throw err;
   }
 };
+
+export const fetchMeTokenAPI = async (data) => {
+  try {
+    const { email, password } = data;
+    const params = {
+      username: email,
+      password,
+    };
+    const response = await base.post("/login/", params);
+    return response.data;
+  } catch (err) {
+    throw err;
+  }
+};

@@ -8,8 +8,7 @@ const Routes = () => {
   return (
     <div id="wrapper">
       <div className="ui container">
-        {/* {window.isAuthed ? <AfterRoutes /> : <BeforeRoutes />} */}
-        {0 ? <AfterRoutes /> : <BeforeRoutes />}
+        {window.isAuthed ? <AfterRoutes /> : <BeforeRoutes />}
       </div>
     </div>
   );
