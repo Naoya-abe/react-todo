@@ -14,7 +14,6 @@ export const createMe = (data) => async (dispatch) => {
 export const fetchMe = () => async (dispatch) => {
   try {
     const response = await fetchMeAPI();
-    console.log(response);
-    // dispatch({ type: FETCH_ME, payload: response.data });
+    dispatch({ type: FETCH_ME, payload: response.data });
   } catch (err) {}
 };

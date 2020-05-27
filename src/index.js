@@ -16,8 +16,6 @@ const Store = createStore(reducers, composeEnhancers(applyMiddleware(thunk)));
 
 const main = async () => {
   window.isAuthed = await checkSession();
-  console.log(window.isAuthed);
-
   ReactDOM.render(
     <Provider store={Store}>
       <Router history={history}>

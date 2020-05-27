@@ -16,6 +16,7 @@ const SignIn = () => {
     setDisabled("disabled");
     try {
       const response = await fetchMeTokenAPI(data);
+      sessionStorage.setItem("userId", response.id);
       sessionStorage.setItem("token", response.token);
       window.location.href = "/todos";
     } catch (err) {

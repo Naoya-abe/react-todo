@@ -34,7 +34,8 @@ export const fetchMeTokenAPI = async (data) => {
 export const fetchMeAPI = async () => {
   try {
     const token = sessionStorage.getItem("token");
-    const response = await base.get("/users/", {
+    const userId = sessionStorage.getItem("userId");
+    const response = await base.get(`/users/${userId}`, {
       headers: {
         Authorization: `Token ${token}`,
       },
