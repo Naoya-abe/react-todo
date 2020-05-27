@@ -1,11 +1,25 @@
-import React from "react";
+import React, { useEffect } from "react";
+
+import { connect } from "react-redux";
 import { Route, Switch, Redirect } from "react-router-dom";
 
 import { MypageRoutes, TodoRoutes, SignOutRoutes } from "../../children";
-
 import { AfterHeader } from "../../../components";
+import { fetchMe } from "../../../redux/actions/me";
 
-const AfterRoutes = () => {
+const AfterRoutes = (props) => {
+  const { fetchMe } = props;
+
+  useEffect(() => {
+    (async () => {
+      try {
+        await fetchMe();
+      } catch (err) {
+        console.log(err);
+      }
+    })();
+  }, [fetchMe]);
+
   return (
     <React.Fragment>
       <AfterHeader />
@@ -21,4 +35,4 @@ const AfterRoutes = () => {
   );
 };
 
-export default AfterRoutes;
+export default connect(null, { fetchMe })(AfterRoutes);

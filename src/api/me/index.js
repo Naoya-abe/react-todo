@@ -30,3 +30,17 @@ export const fetchMeTokenAPI = async (data) => {
     throw err;
   }
 };
+
+export const fetchMeAPI = async () => {
+  try {
+    const token = sessionStorage.getItem("token");
+    const response = await base.get("/users/", {
+      headers: {
+        Authorization: `Token ${token}`,
+      },
+    });
+    return response;
+  } catch (err) {
+    throw err;
+  }
+};

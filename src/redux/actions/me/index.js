@@ -1,6 +1,6 @@
-import { createMeAPI } from "../../../api/me";
+import { createMeAPI, fetchMeAPI } from "../../../api/me";
 
-import { CREATE_ME } from "./types";
+import { CREATE_ME, FETCH_ME } from "./types";
 
 export const createMe = (data) => async (dispatch) => {
   try {
@@ -9,4 +9,12 @@ export const createMe = (data) => async (dispatch) => {
   } catch (err) {
     throw err;
   }
+};
+
+export const fetchMe = () => async (dispatch) => {
+  try {
+    const response = await fetchMeAPI();
+    console.log(response);
+    // dispatch({ type: FETCH_ME, payload: response.data });
+  } catch (err) {}
 };
