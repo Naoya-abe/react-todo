@@ -9,7 +9,7 @@ export const createTodoAPI = async (data) => {
       is_finished: false,
     };
     const token = sessionStorage.getItem("token");
-    const response = await base.post("/todos/", params, {
+    const response = await base.post("todos/", params, {
       headers: {
         Authorization: `Token ${token}`,
       },
@@ -17,5 +17,14 @@ export const createTodoAPI = async (data) => {
     return response;
   } catch (err) {
     console.log(err);
+  }
+};
+
+export const fetchTodosAPI = async () => {
+  try {
+    const response = await base.get("todos/");
+    return response;
+  } catch (err) {
+    throw err;
   }
 };

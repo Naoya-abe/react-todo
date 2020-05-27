@@ -10,7 +10,7 @@ export const createMeAPI = async (data) => {
       about: "",
       avatar_url: "",
     };
-    const response = await base.post("/users/", params);
+    const response = await base.post("users/", params);
     return response;
   } catch (err) {
     throw err;
@@ -24,7 +24,7 @@ export const fetchMeTokenAPI = async (data) => {
       username: email,
       password,
     };
-    const response = await base.post("/login/", params);
+    const response = await base.post("login/", params);
     return response.data;
   } catch (err) {
     throw err;
@@ -35,7 +35,7 @@ export const fetchMeAPI = async () => {
   try {
     const token = sessionStorage.getItem("token");
     const userId = sessionStorage.getItem("userId");
-    const response = await base.get(`/users/${userId}`, {
+    const response = await base.get(`users/${userId}`, {
       headers: {
         Authorization: `Token ${token}`,
       },

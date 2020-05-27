@@ -1,10 +1,19 @@
-import { createTodoAPI } from "../../../api/todos";
-import { CREATE_TODO } from "./types";
+import { createTodoAPI, fetchTodosAPI } from "../../../api/todos";
+import { CREATE_TODO, FETCH_TODOS } from "./types";
 
 export const createTodo = (data) => async (dispatch) => {
   try {
     const response = await createTodoAPI(data);
     dispatch({ type: CREATE_TODO, payload: response.data });
+  } catch (err) {
+    throw err;
+  }
+};
+
+export const fetchTodos = () => async (dispatch) => {
+  try {
+    const response = await fetchTodosAPI();
+    dispatch({ type: FETCH_TODOS, payload: response.data });
   } catch (err) {
     throw err;
   }
