@@ -1,18 +1,12 @@
-import React, { useState } from "react";
+import React from "react";
 import { useForm } from "react-hook-form";
 
 import { Button, Form, Textarea } from "../../components";
 
 const TodoForm = (props) => {
   const { register, handleSubmit, errors } = useForm();
-  const [loading, setLoading] = useState();
-  const [disabled, setDisabled] = useState();
 
-  const { buttonText, onSubmit } = props;
-
-  const sample = () => {
-    console.log("success!!");
-  };
+  const { buttonText, onSubmit, loading, disabled } = props;
 
   return (
     <form className="ui form" onSubmit={handleSubmit(onSubmit)}>
