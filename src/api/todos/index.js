@@ -20,9 +20,9 @@ export const createTodoAPI = async (data) => {
   }
 };
 
-export const fetchTodosAPI = async () => {
+export const fetchTodosAPI = async (activePage) => {
   try {
-    const response = await base.get("todos/");
+    const response = await base.get("todos/", { params: { page: activePage } });
     return response;
   } catch (err) {
     throw err;

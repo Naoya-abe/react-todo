@@ -6,7 +6,7 @@ export default (state = {}, action) => {
     case CREATE_TODO:
       return { ...state, [action.payload.id]: action.payload };
     case FETCH_TODOS:
-      return { ...state, ..._.mapKeys(action.payload, "id") };
+      return { ...state, ...action.payload };
     default:
       return state;
   }

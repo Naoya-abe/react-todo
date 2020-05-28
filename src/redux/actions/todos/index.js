@@ -10,9 +10,9 @@ export const createTodo = (data) => async (dispatch) => {
   }
 };
 
-export const fetchTodos = () => async (dispatch) => {
+export const fetchTodos = (activePage) => async (dispatch) => {
   try {
-    const response = await fetchTodosAPI();
+    const response = await fetchTodosAPI(activePage);
     dispatch({ type: FETCH_TODOS, payload: response.data });
   } catch (err) {
     throw err;
