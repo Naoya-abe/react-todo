@@ -28,3 +28,12 @@ export const fetchTodosAPI = async (activePage) => {
     throw err;
   }
 };
+
+export const fetchTodoAPI = async (todoId) => {
+  try {
+    const response = await base.get(`todos/${todoId}`);
+    return response;
+  } catch (err) {
+    console.log(err);
+  }
+};

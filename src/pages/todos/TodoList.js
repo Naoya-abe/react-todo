@@ -11,7 +11,7 @@ import { Card } from "../../components";
 import "../../styles/pages/todos/index.scss";
 
 const TodoList = (props) => {
-  const { todos, fetchTodos } = props;
+  const { todos, totalTodos, fetchTodos } = props;
   const [activePage, setActivePage] = useState(1);
 
   useEffect(() => {
@@ -32,9 +32,9 @@ const TodoList = (props) => {
     <div className="todo-list">
       <div className="title">Todo App.</div>
       <div className="todo-cards">
-        {todos.count > 0 ? (
+        {todos.length > 0 ? (
           <React.Fragment>
-            {todos.results.map((todo) => {
+            {todos.map((todo) => {
               return (
                 <Link
                   to={`/todos/${todo.id}/detail`}
@@ -42,17 +42,17 @@ const TodoList = (props) => {
                   key={todo.id}
                 >
                   <Card
-                    avatarUrl={todo.avatar_url}
-                    displayName={todo.display_name}
+                    avatarUrl={todo.user.avatar_url}
+                    displayName={todo.user.display_name}
                     date={moment(todo.created_at).startOf("day").fromNow()}
-                    description={todo.title}
+                    title={todo.title}
                   />
                 </Link>
               );
             })}
             <Pagination
               activePage={activePage}
-              totalPages={Math.ceil(todos.count / 3)}
+              totalPages={Math.ceil(totalTodos / 3)}
               onPageChange={onPageChange}
               boundaryRange={1}
               siblingRange={1}
@@ -82,8 +82,11 @@ const TodoList = (props) => {
 };
 
 const mapStateToProps = (state) => {
+  const todos = Object.values(state.todos);
+  const totalTodos = todos.pop();
   return {
-    todos: state.todos,
+    todos,
+    totalTodos,
   };
 };
 

@@ -7,7 +7,7 @@ import paths from "../config/paths";
 import Button from "./Button";
 
 const Card = (props) => {
-  const { avatarUrl, displayName, date, description, detail } = props;
+  const { avatarUrl, displayName, date, title, description, detail } = props;
   return (
     <div className="ui cards">
       <div className="card">
@@ -17,6 +17,7 @@ const Card = (props) => {
             {displayName}
           </div>
           <div className="meta">{date}</div>
+          <div className="description">{title}</div>
           <div className="description">{description}</div>
           {detail ? (
             <div className="update-buttons">
