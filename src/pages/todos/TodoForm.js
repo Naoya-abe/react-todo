@@ -6,7 +6,7 @@ import { Button, Form, Textarea } from "../../components";
 const TodoForm = (props) => {
   const { register, handleSubmit, errors } = useForm();
 
-  const { buttonText, onSubmit, loading, disabled } = props;
+  const { buttonText, onSubmit, loading, disabled, defaultValue } = props;
 
   return (
     <form className="ui form" onSubmit={handleSubmit(onSubmit)}>
@@ -14,6 +14,7 @@ const TodoForm = (props) => {
         type="text"
         name="todoTitle"
         placeholder="title"
+        defaultValue={defaultValue.title}
         register={register({
           required: {
             value: true,
@@ -29,6 +30,7 @@ const TodoForm = (props) => {
       <Textarea
         name="todoContent"
         placeholder="content"
+        defaultValue={defaultValue.content}
         register={register({
           required: {
             value: true,

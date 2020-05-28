@@ -7,7 +7,16 @@ import paths from "../config/paths";
 import Button from "./Button";
 
 const Card = (props) => {
-  const { avatarUrl, displayName, date, title, description, detail } = props;
+  const {
+    avatarUrl,
+    displayName,
+    date,
+    title,
+    description,
+    detail,
+    todoId,
+  } = props;
+
   return (
     <div className="ui cards">
       <div className="card">
@@ -21,10 +30,10 @@ const Card = (props) => {
           <div className="description">{description}</div>
           {detail ? (
             <div className="update-buttons">
-              <Link to={paths.todos.edit} className="to-edit">
+              <Link to={`/todos/${todoId}/edit`} className="to-edit">
                 <Button buttonText="Edit" />
               </Link>
-              <Link to={paths.todos.delete} className="to-delete">
+              <Link to={`/todos/${todoId}/delete`} className="to-delete">
                 <Button buttonText="Delete" />
               </Link>
             </div>

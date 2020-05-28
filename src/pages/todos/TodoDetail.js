@@ -9,7 +9,6 @@ import "../../styles/pages/todos/index.scss";
 
 const TodoDetail = (props) => {
   const { me, todo, match, fetchTodo } = props;
-  console.log(todo);
 
   useEffect(() => {
     (async () => {
@@ -33,6 +32,7 @@ const TodoDetail = (props) => {
             title={todo.title}
             description={todo.content}
             detail={me.id === todo.user.id}
+            todoId={todo.id}
           />
         </div>
       ) : null}
