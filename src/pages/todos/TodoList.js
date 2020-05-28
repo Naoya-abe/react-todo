@@ -70,8 +70,6 @@ const TodoList = (props) => {
               }}
               prevItem={{ content: <Icon name="angle left" />, icon: true }}
               nextItem={{ content: <Icon name="angle right" />, icon: true }}
-              pointing
-              secondary
             />
           </React.Fragment>
         ) : null}

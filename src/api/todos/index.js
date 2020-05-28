@@ -52,8 +52,12 @@ export const fetchTodoAPI = async (todoId) => {
 
 export const patchTodoAPI = async (todoId, data) => {
   try {
-    const { todoTitle, todoContent } = data;
-    const params = { title: todoTitle, content: todoContent };
+    const { todoTitle, todoContent, isFinished } = data;
+    const params = {
+      title: todoTitle,
+      content: todoContent,
+      is_finished: isFinished,
+    };
     const token = sessionStorage.getItem("token");
     const response = await base.patch(`todos/${todoId}/`, params, {
       headers: { Authorization: `Token ${token}` },

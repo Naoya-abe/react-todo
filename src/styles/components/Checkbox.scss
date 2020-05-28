@@ -1,0 +1,26 @@
+@import "../values";
+
+// 共通
+
+// // web
+@media screen and (min-width: 1280px) {
+ .ui.checkbox{
+    margin-bottom: $web__form-margin-bottom;
+    label{
+        font-size: $web__font-size-s;
+        color: $app__white-color;
+
+        &:hover{
+            color: $app__white-color;
+        }
+    }
+ } 
+}
+
+// // tablet
+// @media screen and (min-width: 768px) and (max-width: 1279px) {
+// }
+
+// // mobile
+// @media screen and (max-width: 767px) {
+// }

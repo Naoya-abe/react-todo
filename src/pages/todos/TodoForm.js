@@ -1,7 +1,7 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 
-import { Button, Form, Textarea } from "../../components";
+import { Button, Checkbox, Form, Textarea } from "../../components";
 
 const TodoForm = (props) => {
   const { register, handleSubmit, errors } = useForm();
@@ -14,7 +14,7 @@ const TodoForm = (props) => {
         type="text"
         name="todoTitle"
         placeholder="title"
-        defaultValue={defaultValue.title}
+        defaultValue={defaultValue ? defaultValue.title : null}
         register={register({
           required: {
             value: true,
@@ -30,7 +30,7 @@ const TodoForm = (props) => {
       <Textarea
         name="todoContent"
         placeholder="content"
-        defaultValue={defaultValue.content}
+        defaultValue={defaultValue ? defaultValue.content : null}
         register={register({
           required: {
             value: true,
@@ -42,6 +42,12 @@ const TodoForm = (props) => {
           },
         })}
         error={errors.todoContent}
+      />
+      <Checkbox
+        labelText="Are you done ?"
+        name="isFinished"
+        register={register()}
+        defaultValue={defaultValue ? defaultValue.is_finished : false}
       />
       <Button loading={loading} disabled={disabled} buttonText={buttonText} />
     </form>
