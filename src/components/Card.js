@@ -1,10 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import "../styles/components/Card.scss";
-
 import paths from "../config/paths";
 import Button from "./Button";
+import "../styles/components/Card.scss";
 
 const Card = (props) => {
   const {
@@ -12,7 +11,7 @@ const Card = (props) => {
     displayName,
     date,
     title,
-    description,
+    content,
     detail,
     todoId,
   } = props;
@@ -26,8 +25,10 @@ const Card = (props) => {
             {displayName}
           </div>
           <div className="meta">{date}</div>
-          <div className="description">{title}</div>
-          <div className="description">{description}</div>
+          <div className="description">
+            <p className="todo-title">{title}</p>
+            <p className="todo-content">{content}</p>
+          </div>
           {detail ? (
             <div className="update-buttons">
               <Link to={`/todos/${todoId}/edit`} className="to-edit">

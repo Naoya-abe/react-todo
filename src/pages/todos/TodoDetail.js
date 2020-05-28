@@ -30,7 +30,7 @@ const TodoDetail = (props) => {
             displayName={todo.user.display_name}
             date={moment(todo.created_at).startOf("day").fromNow()}
             title={todo.title}
-            description={todo.content}
+            content={todo.content}
             detail={me.id === todo.user.id}
             todoId={todo.id}
           />

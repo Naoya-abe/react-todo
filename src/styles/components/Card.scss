@@ -23,11 +23,14 @@
             font-size: $web__font-size-m;
           }
         }
-        .meta {
-          font-size: $web__font-size-s;
-        }
         .description {
           font-size: $web__font-size-s;
+          .todo-title{
+            font-weight: bold;
+          }
+          p {
+            word-wrap: break-word;
+          }
         }
         .update-buttons {
           display: flex;
