@@ -18,7 +18,7 @@ const paths = {
   todos: {
     create: "/todos/create",
     delete: "/todos/:id/delete",
-    detail: "/todos/:id/deteil",
+    detail: "/todos/:id/detail",
     edit: "/todos/:id/edit",
     list: "/todos",
   },

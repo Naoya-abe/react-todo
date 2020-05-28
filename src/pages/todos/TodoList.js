@@ -37,7 +37,7 @@ const TodoList = (props) => {
             {todos.results.map((todo) => {
               return (
                 <Link
-                  to={paths.todos.detail}
+                  to={`/todos/${todo.id}/detail`}
                   className="to-detail"
                   key={todo.id}
                 >
