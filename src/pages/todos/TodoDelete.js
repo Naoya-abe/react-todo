@@ -1,13 +1,23 @@
 import React, { useState } from "react";
 
-import history from "../../history";
+import { connect } from "react-redux";
 
+import { deleteTodo } from "../../redux/actions/todos";
+import history from "../../history";
 import Modal from "../Modal";
 
-const TodoDelete = () => {
+const TodoDelete = (props) => {
+  const { match, deleteTodo } = props;
   const [loading, setLoading] = useState(false);
 
-  const handleDelete = () => {
+  const handleDelete = async (todoId) => {
+    try {
+      setLoading(true);
+      await deleteTodo(todoId);
+    } catch (err) {
+      console.log(err);
+      setLoading(false);
+    }
     console.log("handleDelete");
   };
 
@@ -23,7 +33,10 @@ const TodoDelete = () => {
             <div className="ui loader" />
           </div>
         ) : null}
-        <div onClick={handleDelete} className="run-delete">
+        <div
+          onClick={() => handleDelete(match.params.id)}
+          className="run-delete"
+        >
           Delete
         </div>
         <div onClick={handleCancel} className="cancel-delete">
@@ -46,4 +59,4 @@ const TodoDelete = () => {
   );
 };
 
-export default TodoDelete;
+export default connect(null, { deleteTodo })(TodoDelete);
