@@ -6,14 +6,14 @@ import TodoForm from "./TodoForm";
 import "../../styles/pages/todos/index.scss";
 
 const TodoCreate = (props) => {
-  const { me, createTodo } = props;
+  const { createTodo } = props;
   const [loading, setLoading] = useState("");
   const [disabled, setDisabled] = useState("");
-  const handleCreate = async (data) => {
+  const handleCreate = (data) => {
     setDisabled("disabled");
     setLoading("loading");
     try {
-      await createTodo(data);
+      createTodo(data);
     } catch (err) {
       console.log(err);
     }
@@ -36,10 +36,4 @@ const TodoCreate = (props) => {
   );
 };
 
-const mapStateToProps = (state) => {
-  return {
-    me: state.me,
-  };
-};
-
-export default connect(mapStateToProps, { createTodo })(TodoCreate);
+export default connect(null, { createTodo })(TodoCreate);

@@ -19,9 +19,9 @@ const TodoEdit = (props) => {
     })();
   }, [fetchTodo, match.params.id]);
 
-  const onEdit = async (data) => {
+  const onEdit = (data) => {
     try {
-      await patchTodo(match.params.id, data);
+      patchTodo(match.params.id, data);
     } catch (err) {
       console.log(err);
     }

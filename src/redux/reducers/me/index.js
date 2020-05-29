@@ -1,4 +1,3 @@
-import _ from "lodash";
 import { CREATE_ME, FETCH_ME } from "../../actions/me/types";
 
 export default (state = {}, action) => {

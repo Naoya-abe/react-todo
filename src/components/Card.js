@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import paths from "../config/paths";
 import Button from "./Button";
 import Checkbox from "./Checkbox";
 import "../styles/components/Card.scss";

@@ -14,10 +14,14 @@ import {
   DELETE_TOTO,
 } from "./types";
 
+import history from "../../../history";
+import paths from "../../../config/paths";
+
 export const createTodo = (data) => async (dispatch) => {
   try {
     const response = await createTodoAPI(data);
     dispatch({ type: CREATE_TODO, payload: response.data });
+    history.push(paths.todos.list);
   } catch (err) {
     throw err;
   }
@@ -45,6 +49,7 @@ export const patchTodo = (todoId, data) => async (dispatch) => {
   try {
     const response = await patchTodoAPI(todoId, data);
     dispatch({ type: EDIT_TODO, payload: response.data });
+    history.push(`/todos/${todoId}/detail`);
   } catch (err) {
     throw err;
   }
@@ -54,6 +59,7 @@ export const deleteTodo = (todoId) => async (dispatch) => {
   try {
     const response = await deleteTodoAPI(todoId);
     dispatch({ type: DELETE_TOTO, payload: response });
+    history.push(paths.todos.list);
   } catch (err) {
     throw err;
   }

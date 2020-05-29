@@ -5,7 +5,6 @@ import { Link } from "react-router-dom";
 import moment from "moment";
 import { Icon, Pagination } from "semantic-ui-react";
 
-import paths from "../../config/paths";
 import { fetchTodos } from "../../redux/actions/todos";
 import { Card } from "../../components";
 import "../../styles/pages/todos/index.scss";

@@ -10,15 +10,14 @@ const TodoDelete = (props) => {
   const { match, deleteTodo } = props;
   const [loading, setLoading] = useState(false);
 
-  const handleDelete = async (todoId) => {
+  const handleDelete = (todoId) => {
     try {
       setLoading(true);
-      await deleteTodo(todoId);
+      deleteTodo(todoId);
     } catch (err) {
       console.log(err);
       setLoading(false);
     }
-    console.log("handleDelete");
   };
 
   const handleCancel = () => {

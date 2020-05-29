@@ -12,8 +12,6 @@ const Checkbox = (props) => {
     }
   };
 
-  console.log(readOnly);
-
   return (
     <div className={`ui ${readOnly} checkbox`}>
       <input

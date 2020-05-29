@@ -5,9 +5,6 @@ import { useForm } from "react-hook-form";
 
 import { createMe } from "../../redux/actions/me";
 
-import history from "../../history";
-import paths from "../../config/paths";
-
 import { Button, Form } from "../../components";
 import "../../styles/pages/SignUp/index.scss";
 
@@ -17,13 +14,11 @@ const SignUp = (props) => {
   const [loading, setLoading] = useState("");
   const [disabled, setDisabled] = useState("");
 
-  const handleSignUp = async (data) => {
+  const handleSignUp = (data) => {
     setLoading("loading");
     setDisabled("disabled");
     try {
-      await createMe(data);
-      // Todo: Can't perform a React state update on an unmounted component
-      history.push(paths.signup.thanks);
+      createMe(data);
     } catch (err) {
       console.log(err);
     }
