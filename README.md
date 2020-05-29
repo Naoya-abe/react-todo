@@ -18,6 +18,6 @@ If you can understand the source code of this application, you'll graduate from 
 REACT_APP_API="http://localhost:8000/api/"
 ```
 
-- Clone the Django REST framework project from the following repository [Django-Rest-framework-todo](https://github.com/Naoya-abe/Django-Rest-framework-todo)
+- Clone the Django REST framework project from the following repository. [Django-Rest-framework-todo](https://github.com/Naoya-abe/Django-Rest-framework-todo)
 
 - Type **yarn start** in the terminal app.
