@@ -32,7 +32,12 @@ const TodoEdit = (props) => {
       <div className="title">Edit</div>
       <div className="edit-form">
         {todo ? (
-          <TodoForm buttonText="Update" onSubmit={onEdit} defaultValue={todo} />
+          <TodoForm
+            buttonText="Update"
+            onSubmit={onEdit}
+            defaultValue={todo}
+            edit
+          />
         ) : null}
       </div>
     </div>

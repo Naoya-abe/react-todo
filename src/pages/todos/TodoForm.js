@@ -6,7 +6,7 @@ import { Button, Checkbox, Form, Textarea } from "../../components";
 const TodoForm = (props) => {
   const { register, handleSubmit, errors } = useForm();
 
-  const { buttonText, onSubmit, loading, disabled, defaultValue } = props;
+  const { buttonText, onSubmit, loading, disabled, defaultValue, edit } = props;
 
   return (
     <form className="ui form" onSubmit={handleSubmit(onSubmit)}>
@@ -43,12 +43,15 @@ const TodoForm = (props) => {
         })}
         error={errors.todoContent}
       />
-      <Checkbox
-        labelText="Are you done ?"
-        name="isFinished"
-        register={register()}
-        defaultValue={defaultValue ? defaultValue.is_finished : false}
-      />
+      {edit ? (
+        <Checkbox
+          labelText="Are you done ?"
+          name="isFinished"
+          register={register()}
+          defaultValue={defaultValue ? defaultValue.is_finished : false}
+        />
+      ) : null}
+
       <Button loading={loading} disabled={disabled} buttonText={buttonText} />
     </form>
   );
