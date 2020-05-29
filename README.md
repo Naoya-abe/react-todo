@@ -1,6 +1,6 @@
 # react-todo
 
-This is a basic Todo application that was created for React beginners.
+This is a basic Todo application that was created for React beginners.  
 If you can understand the source code of this application, you'll graduate from being a novice to React.
 
 # Learned Skills
@@ -19,6 +19,7 @@ REACT_APP_API="http://localhost:8000/api/"
 ```
 
 - Clone the Django REST framework project from the following repository
-  [Django-Rest-framework-todo](https://github.com/Naoya-abe/Django-Rest-framework-todo)
+
+[Django-Rest-framework-todo](https://github.com/Naoya-abe/Django-Rest-framework-todo)
 
 - Type **yarn start** in the terminal app.
