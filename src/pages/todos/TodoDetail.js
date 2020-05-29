@@ -28,7 +28,7 @@ const TodoDetail = (props) => {
           <Card
             avatarUrl={todo.user.avatar_url}
             displayName={todo.user.display_name}
-            date={moment(todo.created_at).startOf("day").fromNow()}
+            date={moment(todo.created_at).format("MMMM Do YYYY, h:mm:ss a")}
             title={todo.title}
             content={todo.content}
             detail={me.id === todo.user.id}

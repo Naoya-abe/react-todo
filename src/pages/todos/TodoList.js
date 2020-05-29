@@ -43,7 +43,9 @@ const TodoList = (props) => {
                   <Card
                     avatarUrl={todo.user.avatar_url}
                     displayName={todo.user.display_name}
-                    date={moment(todo.created_at).startOf("day").fromNow()}
+                    date={moment(todo.created_at).format(
+                      "MMMM Do YYYY, h:mm:ss a"
+                    )}
                     title={todo.title}
                     checked={todo.is_finished}
                   />
@@ -82,6 +84,7 @@ const TodoList = (props) => {
 const mapStateToProps = (state) => {
   const todos = Object.values(state.todos);
   const totalTodos = todos.pop();
+  todos.reverse();
   return {
     todos,
     totalTodos,
