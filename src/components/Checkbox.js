@@ -7,8 +7,12 @@ const Checkbox = (props) => {
   const [checked, setChecked] = useState(defaultValue);
 
   const handleChange = () => {
-    setChecked(!checked);
+    if (!readOnly) {
+      setChecked(!checked);
+    }
   };
+
+  console.log(readOnly);
 
   return (
     <div className={`ui ${readOnly} checkbox`}>
