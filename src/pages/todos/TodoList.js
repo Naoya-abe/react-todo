@@ -46,6 +46,7 @@ const TodoList = (props) => {
                     displayName={todo.user.display_name}
                     date={moment(todo.created_at).startOf("day").fromNow()}
                     title={todo.title}
+                    checked={todo.is_finished}
                   />
                 </Link>
               );

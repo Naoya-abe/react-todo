@@ -27,6 +27,9 @@
           font-size: $web__font-size-s;
           .todo-title{
             font-weight: bold;
+            display: flex;
+            align-items: center;
+            margin-bottom: 8px;
           }
           p {
             word-wrap: break-word;

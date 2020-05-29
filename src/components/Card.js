@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 
 import paths from "../config/paths";
 import Button from "./Button";
+import Checkbox from "./Checkbox";
 import "../styles/components/Card.scss";
 
 const Card = (props) => {
@@ -14,6 +15,7 @@ const Card = (props) => {
     content,
     detail,
     todoId,
+    checked,
   } = props;
 
   return (
@@ -26,7 +28,10 @@ const Card = (props) => {
           </div>
           <div className="meta">{date}</div>
           <div className="description">
-            <p className="todo-title">{title}</p>
+            <div className="todo-title">
+              {title}
+              <Checkbox readOnly="read-only" defaultValue={checked} />
+            </div>
             <p className="todo-content">{content}</p>
           </div>
           {detail ? (

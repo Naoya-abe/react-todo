@@ -33,6 +33,7 @@ const TodoDetail = (props) => {
             content={todo.content}
             detail={me.id === todo.user.id}
             todoId={todo.id}
+            checked={todo.is_finished}
           />
         </div>
       ) : null}

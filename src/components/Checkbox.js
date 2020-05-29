@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import "../styles/components/Checkbox.scss";
 
 const Checkbox = (props) => {
-  const { labelText, name, defaultValue, register } = props;
+  const { labelText, name, defaultValue, register, readOnly } = props;
   const [checked, setChecked] = useState(defaultValue);
 
   const handleChange = () => {
@@ -11,7 +11,7 @@ const Checkbox = (props) => {
   };
 
   return (
-    <div className="ui checkbox">
+    <div className={`ui ${readOnly} checkbox`}>
       <input
         type="checkbox"
         ref={register}
